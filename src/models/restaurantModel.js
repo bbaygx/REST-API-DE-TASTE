@@ -35,7 +35,7 @@ const restaurantSchema = new Schema({
     required: true,
   },
   terlaris: {
-    type: Number,
+    type: Boolean,
     required: true,
   },
   createdAt: {
