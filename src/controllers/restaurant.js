@@ -9,7 +9,6 @@ export const getRestaurantsFood = async (req, res) => {
       status: { $regex: status || "", $options: "i" },
       foodType: { $regex: type || "", $options: "i" },
       terlaris: req.query.terlaris || false,
-      terjual: req.query.terjual,
     });
     if (restaurants.length === 0)
       return res.status(404).json({
@@ -56,7 +55,6 @@ export const postRestaurant = async (req, res) => {
       status: req.body.status,
       rating: req.body.rating,
       terlaris: req.body.terlaris,
-      terjual: req.body.terjual,
     });
     res.status(201).json({
       status: "success",
@@ -79,7 +77,6 @@ export const updateRestaurant = async (req, res) => {
     status,
     rating,
     terlaris,
-    terjual,
   } = req.body;
   try {
     const updatedRestaurant = await restaurantModel.findByIdAndUpdate(
@@ -94,7 +91,6 @@ export const updateRestaurant = async (req, res) => {
         status,
         rating,
         terlaris,
-        terjual,
       },
       { new: true }
     );
