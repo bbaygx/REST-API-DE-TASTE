@@ -34,10 +34,6 @@ const restaurantSchema = new Schema({
     type: Number,
     required: true,
   },
-  terjual: {
-    type: Number,
-    required: true,
-  },
   terlaris: {
     type: Boolean,
     required: true,
