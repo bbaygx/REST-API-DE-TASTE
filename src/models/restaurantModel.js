@@ -38,10 +38,6 @@ const restaurantSchema = new Schema({
     type: Boolean,
     required: true,
   },
-  terjual: {
-    type: Number,
-    required: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,
