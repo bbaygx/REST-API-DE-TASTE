@@ -8,7 +8,6 @@ export const getRestaurantsFood = async (req, res) => {
       region: { $regex: region || "", $options: "i" },
       status: { $regex: status || "", $options: "i" },
       foodType: { $regex: type || "", $options: "i" },
-      terjual: req.query.terjual,
       terlaris: req.query.terlaris || false,
     });
     if (restaurants.length === 0)
@@ -55,7 +54,6 @@ export const postRestaurant = async (req, res) => {
       region: req.body.region,
       status: req.body.status,
       rating: req.body.rating,
-      terjual: req.body.terjual,
       terlaris: req.body.terlaris,
     });
     res.status(201).json({
@@ -78,7 +76,6 @@ export const updateRestaurant = async (req, res) => {
     region,
     status,
     rating,
-    terjual,
     terlaris,
   } = req.body;
   try {
@@ -93,7 +90,6 @@ export const updateRestaurant = async (req, res) => {
         region,
         status,
         rating,
-        terjual,
         terlaris,
       },
       { new: true }
