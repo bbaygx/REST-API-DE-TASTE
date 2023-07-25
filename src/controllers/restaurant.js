@@ -8,7 +8,7 @@ export const getRestaurantsFood = async (req, res) => {
       region: { $regex: region || "", $options: "i" },
       status: { $regex: status || "", $options: "i" },
       foodType: { $regex: type || "", $options: "i" },
-      terlaris: req.query.terlaris || false,
+      terlaris: req.query.terlaris,
     });
     if (restaurants.length === 0)
       return res.status(404).json({
